@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-//using CSV;
+using CSV;
 //using CSV1;
 //using CSV2;
 using CSV3;
@@ -67,12 +67,16 @@ class Program
 
 
         // Problem 7
-        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Sort\employees.csv";
+        //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Sort\employees.csv";
 
-        List<Employee> employees = CsvEmployeeSorter.ReadEmployees(filePath);
+        //List<Employee> employees = CsvEmployeeSorter.ReadEmployees(filePath);
 
-        CsvEmployeeSorter.PrintTop5BySalary(employees);
+        //CsvEmployeeSorter.PrintTop5BySalary(employees);
 
+        // Problem 8
+        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Student\students.csv";
+
+        CsvValidator.ValidateCsv(filePath);
         Console.ReadKey();
     }
 }
