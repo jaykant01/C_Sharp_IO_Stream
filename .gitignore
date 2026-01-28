@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+.vscode
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+#sln File
+C_Sharp_Collection_Genric.sln 
