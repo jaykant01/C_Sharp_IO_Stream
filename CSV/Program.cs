@@ -1,6 +1,9 @@
-﻿using CSV;
-using CSV1;
-using CSV2;
+﻿using System.Collections.Generic;
+//using CSV;
+//using CSV1;
+//using CSV2;
+using CSV3;
+
 
 class Program
 {
@@ -55,12 +58,20 @@ class Program
         //CsvEmployeeSearcher.SearchEmployeeByName(filePath, name);
 
         // Problem 6
-        string inputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\employees.csv";
-        string outputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\updated_employees.csv";
+        //string inputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\employees.csv";
+        //string outputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\updated_employees.csv";
 
-        CsvSalaryUpdater.UpdateSalary(inputFile, outputFile);
+        //CsvSalaryUpdater.UpdateSalary(inputFile, outputFile);
 
-        Console.WriteLine("Salary updated for IT employees and saved to new CSV file.");
+        //Console.WriteLine("Salary updated for IT employees and saved to new CSV file.");
+
+
+        // Problem 7
+        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Sort\employees.csv";
+
+        List<Employee> employees = CsvEmployeeSorter.ReadEmployees(filePath);
+
+        CsvEmployeeSorter.PrintTop5BySalary(employees);
 
         Console.ReadKey();
     }
