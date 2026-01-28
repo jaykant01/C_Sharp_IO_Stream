@@ -7,7 +7,7 @@ class Program
     {
         // File Copy 
         //string sourcePath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\input.txt";
-        //string destinationPath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\output.txt";
+        string destinationPath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\output.txt";
         //FileCopyService fileCopy = new FileCopyService();
         //fileCopy.CopyFile(sourcePath,destinationPath);
 
@@ -26,28 +26,45 @@ class Program
 
 
         // Problem $ Searializer
-        EmployeeSerializer serializer = new EmployeeSerializer();
+        //EmployeeSerializer serializer = new EmployeeSerializer();
 
-        // Create employee list
-        List<Employee> employees = new List<Employee>
-            {
-                new Employee(1, "Jaykant", "IT", 50000),
-                new Employee(2, "Amit", "HR", 40000),
-                new Employee(3, "Neha", "Finance", 60000)
-            };
+        //// Create employee list
+        //List<Employee> employees = new List<Employee>
+        //    {
+        //        new Employee(1, "Jaykant", "IT", 50000),
+        //        new Employee(2, "Amit", "HR", 40000),
+        //        new Employee(3, "Neha", "Finance", 60000)
+        //    };
 
-        // Serialize employees
-        serializer.SaveEmployees(employees);
+        //// Serialize employees
+        //serializer.SaveEmployees(employees);
 
-        // Deserialize employees
-        List<Employee> loadedEmployees = serializer.LoadEmployees();
+        //// Deserialize employees
+        //List<Employee> loadedEmployees = serializer.LoadEmployees();
 
-        Console.WriteLine("\nEmployee Details:");
-        foreach (Employee emp in loadedEmployees)
+        //Console.WriteLine("\nEmployee Details:");
+        //foreach (Employee emp in loadedEmployees)
+        //{
+        //    Console.WriteLine(
+        //        $"ID: {emp.Id}, Name: {emp.Name}, Dept: {emp.Department}, Salary: {emp.Salary}");
+        //}
+
+        // Problem ByteArray Stream - Convert Image to ByteArray
+        string sourceImage = @"D:\C# All Repo\C_Sharp_IO_Stream\Streams\original.jpg";
+        string newImage = "copy.jpg";
+
+        byte[] imageBytes = ConvertImage.ImageToByteArray(sourceImage);
+
+        if (imageBytes == null)
         {
-            Console.WriteLine(
-                $"ID: {emp.Id}, Name: {emp.Name}, Dept: {emp.Department}, Salary: {emp.Salary}");
+            Console.WriteLine("Image conversion failed.");
+            return;
         }
+        ConvertImage.ByteArrayToImage(imageBytes, newImage);
+
+        bool isSame = ConvertImage.AreImagesIdentical(sourceImage, newImage);
+
+        Console.WriteLine(isSame ? "Images are identical" : "Images are NOT identical");
 
         Console.ReadKey();
     }
