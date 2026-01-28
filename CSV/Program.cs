@@ -1,5 +1,6 @@
 ﻿using CSV;
 using CSV1;
+using CSV2;
 
 class Program
 {
@@ -46,12 +47,20 @@ class Program
 
 
         // Problem 5
-        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Search\employees.csv";
+        //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Search\employees.csv";
 
-        Console.Write("Enter employee name to search: ");
-        string name = Console.ReadLine();
+        //Console.Write("Enter employee name to search: ");
+        //string name = Console.ReadLine();
 
-        CsvEmployeeSearcher.SearchEmployeeByName(filePath, name);
+        //CsvEmployeeSearcher.SearchEmployeeByName(filePath, name);
+
+        // Problem 6
+        string inputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\employees.csv";
+        string outputFile = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Modify\updated_employees.csv";
+
+        CsvSalaryUpdater.UpdateSalary(inputFile, outputFile);
+
+        Console.WriteLine("Salary updated for IT employees and saved to new CSV file.");
 
         Console.ReadKey();
     }
