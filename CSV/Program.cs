@@ -32,17 +32,26 @@ class Program
 
 
         // Problem 5
-        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Count\data.csv";
+        //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Count\data.csv";
 
-        int count = CsvRowCounter.CountRows(filePath);
+        //int count = CsvRowCounter.CountRows(filePath);
 
-        Console.WriteLine($"Number of records (excluding header): {count}");
+        //Console.WriteLine($"Number of records (excluding header): {count}");
 
 
         // Problem 4
         //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Filter\students.csv";
 
         //CsvStudentFilter.PrintStudentsWithMarksAbove80(filePath);
+
+
+        // Problem 5
+        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Search\employees.csv";
+
+        Console.Write("Enter employee name to search: ");
+        string name = Console.ReadLine();
+
+        CsvEmployeeSearcher.SearchEmployeeByName(filePath, name);
 
         Console.ReadKey();
     }
