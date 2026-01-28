@@ -68,9 +68,18 @@ class Program
 
 
         // Filter Streams - Convert Uppercase to Lowercase
-        Console.WriteLine("Converting uppercase text to lowercase");
-        CaseConverter.ConvertUpperToLower(sourcePath, destinationPath);
-        Console.WriteLine("Conversion completed successfully");
+        //Console.WriteLine("Converting uppercase text to lowercase");
+        //CaseConverter.ConvertUpperToLower(sourcePath, destinationPath);
+        //Console.WriteLine("Conversion completed successfully");
+
+
+        // Data Streams - Store and Retrieve Primitive Data
+
+        Console.WriteLine("Storing student data");
+        StudentData.WriteStudentData(destinationPath, 101, "Jaykant Yadav", 8.75);
+
+        Console.WriteLine("\nRetrieving student data");
+        StudentData.ReadStudentData(destinationPath);
 
         Console.ReadKey();
     }
