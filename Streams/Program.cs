@@ -75,11 +75,17 @@ class Program
 
         // Data Streams - Store and Retrieve Primitive Data
 
-        Console.WriteLine("Storing student data");
-        StudentData.WriteStudentData(destinationPath, 101, "Jaykant Yadav", 8.75);
+        //Console.WriteLine("Storing student data");
+        //StudentData.WriteStudentData(destinationPath, 101, "Jaykant Yadav", 8.75);
 
-        Console.WriteLine("\nRetrieving student data");
-        StudentData.ReadStudentData(destinationPath);
+        //Console.WriteLine("\nRetrieving student data");
+        //StudentData.ReadStudentData(destinationPath);
+
+
+        // Piped Streams - Inter-Thread Communication
+        Console.WriteLine("Starting Piped Stream Communication...\n");
+        PipeStream.Start();
+        Console.WriteLine("\nCommunication Finished");
 
         Console.ReadKey();
     }
