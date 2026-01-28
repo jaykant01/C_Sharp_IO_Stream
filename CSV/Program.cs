@@ -15,6 +15,7 @@ class Program
         //    Console.WriteLine(student);
         //}
 
+
         //Problem 2
         //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Employee\employees.csv";
         //List<Employee> employees = new List<Employee>
@@ -29,10 +30,19 @@ class Program
 
         //Console.WriteLine("Employee data written to CSV file successfully.");
 
-        // Problem 3
-        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Filter\students.csv";
 
-        CsvStudentFilter.PrintStudentsWithMarksAbove80(filePath);
+        // Problem 5
+        string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Count\data.csv";
+
+        int count = CsvRowCounter.CountRows(filePath);
+
+        Console.WriteLine($"Number of records (excluding header): {count}");
+
+
+        // Problem 4
+        //string filePath = @"D:\C# All Repo\C_Sharp_IO_Stream\CSV\Filter\students.csv";
+
+        //CsvStudentFilter.PrintStudentsWithMarksAbove80(filePath);
 
         Console.ReadKey();
     }
