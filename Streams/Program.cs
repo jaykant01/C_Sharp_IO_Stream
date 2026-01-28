@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         // File Copy 
-        //string sourcePath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\input.txt";
+        string sourcePath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\input.txt";
         string destinationPath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\output.txt";
         //FileCopyService fileCopy = new FileCopyService();
         //fileCopy.CopyFile(sourcePath,destinationPath);
@@ -50,21 +50,27 @@ class Program
         //}
 
         // Problem ByteArray Stream - Convert Image to ByteArray
-        string sourceImage = @"D:\C# All Repo\C_Sharp_IO_Stream\Streams\original.jpg";
-        string newImage = "copy.jpg";
+        //string sourceImage = @"D:\C# All Repo\C_Sharp_IO_Stream\Streams\original.jpg";
+        //string newImage = "copy.jpg";
 
-        byte[] imageBytes = ConvertImage.ImageToByteArray(sourceImage);
+        //byte[] imageBytes = ConvertImage.ImageToByteArray(sourceImage);
 
-        if (imageBytes == null)
-        {
-            Console.WriteLine("Image conversion failed.");
-            return;
-        }
-        ConvertImage.ByteArrayToImage(imageBytes, newImage);
+        //if (imageBytes == null)
+        //{
+        //    Console.WriteLine("Image conversion failed.");
+        //    return;
+        //}
+        //ConvertImage.ByteArrayToImage(imageBytes, newImage);
 
-        bool isSame = ConvertImage.AreImagesIdentical(sourceImage, newImage);
+        //bool isSame = ConvertImage.AreImagesIdentical(sourceImage, newImage);
 
-        Console.WriteLine(isSame ? "Images are identical" : "Images are NOT identical");
+        //Console.WriteLine(isSame ? "Images are identical" : "Images are NOT identical");
+
+
+        // Filter Streams - Convert Uppercase to Lowercase
+        Console.WriteLine("Converting uppercase text to lowercase");
+        CaseConverter.ConvertUpperToLower(sourcePath, destinationPath);
+        Console.WriteLine("Conversion completed successfully");
 
         Console.ReadKey();
     }
