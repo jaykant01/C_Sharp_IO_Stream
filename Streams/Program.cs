@@ -1,4 +1,5 @@
-﻿namespace Streams;
+﻿using System.Collections.Generic;
+namespace Streams;
 
 class Program
 {
@@ -6,7 +7,7 @@ class Program
     {
         // File Copy 
         //string sourcePath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\input.txt";
-        string destinationPath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\output.txt";
+        //string destinationPath = @"D:\\C# All Repo\\C_Sharp_IO_Stream\\Streams\\output.txt";
         //FileCopyService fileCopy = new FileCopyService();
         //fileCopy.CopyFile(sourcePath,destinationPath);
 
@@ -20,9 +21,33 @@ class Program
 
 
         // Input from Console and Output to file
-        ReadConsole readCs = new ReadConsole();
-        readCs.SaveUserInfo(destinationPath);
+        //ReadConsole readCs = new ReadConsole();
+        //readCs.SaveUserInfo(destinationPath);
 
+
+        // Problem $ Searializer
+        EmployeeSerializer serializer = new EmployeeSerializer();
+
+        // Create employee list
+        List<Employee> employees = new List<Employee>
+            {
+                new Employee(1, "Jaykant", "IT", 50000),
+                new Employee(2, "Amit", "HR", 40000),
+                new Employee(3, "Neha", "Finance", 60000)
+            };
+
+        // Serialize employees
+        serializer.SaveEmployees(employees);
+
+        // Deserialize employees
+        List<Employee> loadedEmployees = serializer.LoadEmployees();
+
+        Console.WriteLine("\nEmployee Details:");
+        foreach (Employee emp in loadedEmployees)
+        {
+            Console.WriteLine(
+                $"ID: {emp.Id}, Name: {emp.Name}, Dept: {emp.Department}, Salary: {emp.Salary}");
+        }
 
         Console.ReadKey();
     }
