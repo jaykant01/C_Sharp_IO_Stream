@@ -83,9 +83,14 @@ class Program
 
 
         // Piped Streams - Inter-Thread Communication
-        Console.WriteLine("Starting Piped Stream Communication...\n");
-        PipeStream.Start();
-        Console.WriteLine("\nCommunication Finished");
+        //Console.WriteLine("Starting Piped Stream Communication...\n");
+        //PipeStream.Start();
+        //Console.WriteLine("\nCommunication Finished");
+
+
+        //Count Words in a File
+        Console.WriteLine("Counting words in file\n");
+        WordCounter.CountWords(sourcePath);
 
         Console.ReadKey();
     }
