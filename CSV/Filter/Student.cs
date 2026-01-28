@@ -1,4 +1,4 @@
-﻿namespace CSV1;
+﻿namespace CSV;
 
 public class Student
 {
